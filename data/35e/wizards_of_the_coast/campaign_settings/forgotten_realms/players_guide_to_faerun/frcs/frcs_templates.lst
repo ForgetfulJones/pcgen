@@ -1,7 +1,7 @@
 # CVS $Revision: $ $Author: $ -- Sun Aug 17 15:41:15 2014 -- reformated by prettylst.pl v1.51 (build 24906)
 
 
-
+Language ~ Bonus (Aasimar/FR)			VISIBLE:NO	LANGBONUS:TYPE=Spoken
 
 
 # Template Name	Unique Key			Visible	Favored Class		Auto Language			Bonus Languages								Subrace
@@ -27,15 +27,15 @@ Rothe			VISIBLE:NO	SOURCEPAGE:p.	ABILITY:Special Ability|AUTOMATIC|Rothe ~ Stamp
 
 ###Block: Subrace Support
 # Template Name		Unique Key				Visible	Favored Class		Auto Language			Bonus Languages							Subrace
-Ghostwise			KEY:Ghostwise Halfling		VISIBLE:NO	FAVOREDCLASS:Barbarian	AUTO:LANG|Common|Halfling	LANGBONUS:Chondathan,Elven,Gnoll,Shaaran,Sylvan		SUBRACE:YES
+Ghostwise			KEY:Ghostwise Halfling		VISIBLE:NO	FAVOREDCLASS:Barbarian	AUTO:LANG|Common|Halfling	LANGBONUS:Chondathan,Elven,Gnoll,Shaaran,Sylvan		SUBRACE:Ghostwise
 Lightfoot Halfling.MOD																	LANGBONUS:Chessentan,Chondathan,Damaran,Illuskan
-Strongheart			KEY:Strongheart Halfling	VISIBLE:NO	FAVOREDCLASS:Rogue	AUTO:LANG|Common|Halfling	LANGBONUS:Chondathan,Elven,Gnoll,Shaaran,Sylvan		SUBRACE:YES
+Strongheart			KEY:Strongheart Halfling	VISIBLE:NO	FAVOREDCLASS:Rogue	AUTO:LANG|Common|Halfling	LANGBONUS:Chondathan,Elven,Gnoll,Shaaran,Sylvan		SUBRACE:Strongheart
 
 ################################
 # DG Aug 2014 - concept, FRCS has quite different pre-reqs for a lot of feats, but the PG updates the feats to 3.5 and errata's them.
 # so, characters that were started with FRCS and were migrated to 3.5/PG need a way to override the pre-reqs, this is a way to do that
 # The relative template is added as an alternative PRETEMPLATE to each feat
-# This still needs some work to bypass the 'max 1 regional feat' limit that PG imposes (!PREFEAT:1,TYPE.Regional)
+# This still needs some work to bypass the 'max 1 regional feat' limit that PG imposes (!PREABILITY:1,CATEGORY=FEAT,TYPE.Regional)
 # Alternative is to duplicate all feats (major overhead and confuses feat list)
 # Alternative is to have the template here grant the feat directly... need to adjust feat pool though
 # Actually 'QUALIFY' is designed for this ! :-), however PRECLASSLEVELMAX:Q:1,TYPE.Base=1 seems to be bypassed, despite that Q: ...
@@ -44,5 +44,4 @@ FRCS Survivor Feat	DESC:Modifies pre-reqs to allow an FRCS generated character t
 # Survivor feat also has racial region prereq options:deep gnome, drow elf, ,lightfoot halfling, ghostwise halfling, shield dwarf, wild elf
 FRCS Street Smart Feat	DESC:Modifies pre-reqs to allow an FRCS generated character to use the PG rules	PREMULT:1,[PREREGION:Amn],[PREREGION:Calimshan],[PREREGION:Chessenta],[PREREGION:Moonsea],[PREREGION:Unther]
 #FRCS Bloodline of Fire Feat	DESC:Modifies pre-reqs to allow an FRCS generated character to use the PG rules	PREREGION:Calimshan
-FRCS Bloodline of Fire Feat	DESC:Modifies pre-reqs to allow an FRCS generated character to use the PG rules	PREREGION:Calimshan	QUALIFY:FEAT|Bloodline of Fire
-
+FRCS Bloodline of Fire Feat	DESC:Modifies pre-reqs to allow an FRCS generated character to use the PG rules	PREREGION:Calimshan	QUALIFY:ABILITY=FEAT|Bloodline of Fire
